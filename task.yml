@@ -1,17 +1,36 @@
-#srcDB和destDB表示DB号
-#srcSec和destSec表示sector号
-#以下示例表示进行两次交换
-#task1交换DB0 Sector0和DB1 Sector1
-#task2交换DB2 Sector2和DB3 Sector3
-#请根据自己的需要追加，修改和删除task
--task1:
-  srcDB: 0
-  srcSec: 0
-  destDB: 1
-  destSec: 1
--task2:
-  srcDB: 2
-  srcSec: 2
-  destDB: 3
-  destSec: 3  
- 
+#exchange：交换两个sector
+#copy：拷贝sector
+#set： 设置sector写入次数
+#按照先exchange再copy再set顺序执行
+#冒号后面一定要有空格
+exchange:
+ -
+  srcdb: 0
+  srcsec: 0
+  destdb: 0
+  destsec: 14
+ -
+  srcdb: 0
+  srcsec: 0
+  destdb: 0
+  destsec: 14
+copy:
+ -
+  srcdb: 0
+  srcsec: 0
+  destdb: 0
+  destsec: 14
+ -
+  srcdb: 0
+  srcsec: 0
+  destdb: 0
+  destsec: 14
+set:
+ -
+  destdb: 0
+  destsec: 14
+  count: 3
+ -
+  destdb: 0
+  destsec: 14
+  count: 3
